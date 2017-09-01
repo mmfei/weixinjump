@@ -1,0 +1,27 @@
+{ 
+    "manifest_version": 2, 
+        "name": "weixinJumpExtension", 
+        "version": "1.0", 
+        "description": "这是针对微信屏蔽了部分分享链接(taobao之类的)开发的插件，他可以自动跳转到目标地址，而不需要手动复制粘贴.", 
+        "browser_action": { 
+            "default_icon": "icon.ico" 
+        }, 
+        "icons": {
+            "16": "icon.ico",
+            "64": "icon.ico",
+            "128": "icon.ico"
+        },
+        "permissions": [ 
+            "http://*/", 
+        "bookmarks", 
+        "tabs", 
+        "history" 
+            ] , 
+        "content_scripts": [ 
+        { 
+            "matches": ["https://support.weixin.qq.com/*"], 
+            "css": ["mystyles.css"], 
+            "js": ["weixinjump.js"] 
+        } 
+    ] 
+}
